@@ -1,0 +1,51 @@
+//zadanie 1
+
+#include <iostream>
+#include <vector>
+
+struct Rectangle {
+    int x;
+    int y;
+    int width;
+    int height;
+    };
+
+void move(Rectangle& rectangle, int dX, int dY) {
+    rectangle.x = rectangle.x + dX;
+    rectangle.y = rectangle.y + dY;
+}
+    
+void resize(Rectangle& rectangle, int new_w, int new_h) {
+  rectangle.width = new_w;
+  rectangle.height = new_h;
+}
+
+void print(Rectangle& rectangle) {
+ std::cout << "Point (" << rectangle.x << " ; "
+        << rectangle.y << ")"
+        << " Width = " << rectangle.width
+        << " Height = " << rectangle.height << '\n';
+}
+
+
+int main()
+{   
+    Rectangle rectangle = { 1, 1, 2, 3 };
+    print(rectangle);
+    
+    move(rectangle, 2, 2);
+    resize(rectangle, 5, 10);
+    std::cout << rectangle.x << " " << rectangle.y << '\n';
+    std::cout << rectangle.width << " " << rectangle.height << '\n';
+ 
+    move(rectangle, 2, 2);
+    print(rectangle);
+ 
+    resize(rectangle, 5, 10);
+    print(rectangle);
+    
+    
+}
+
+//zadanie2
+
